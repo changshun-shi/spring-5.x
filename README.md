@@ -1,8 +1,4 @@
-IDEA构建spring源码
-
-@[TOC](WIN10下使用IDEA构建spring源码图文教程，亲测有效)
-# 简介
-这一阵子在读spring源码，但是网上的文章，构建spring源码大都有问题，导致我构建源码的时候出现了很多问题。所以我自己重新构建了一下，所有的环境都是当前时间之前最新的。
+# IDEA构建spring源码
 
 # 环境
 win10 + jdk1.8.0_211 + IntelliJ IDEA 2019.1.3
