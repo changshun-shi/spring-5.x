@@ -11,35 +11,9 @@ win10 + jdk1.8.0_211 + IntelliJ IDEA 2019.1.3
 ## 构建
 
 1. 进入源码目录，打开cmd窗口，输入 ```gradlew :spring-oxm:compileTestJava```
-> 网上很多文章都说这里要下载gradle，其实不用，输入这个指令之后会自己下载的（亲测），截图如下（中间可能会出错，十有八九是网络问题，建议挂vpn，或者多试几次）：
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628225649272.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
 2. 打开Intellij IDEA，依次选择```File -> New -> Project from Existing Sources -> spring项目根目录 -> 选择 build.gradle```，然后如下图，一路ok即可。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628225809975.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-选择gradle：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628225933176.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-选择ok:
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230421309.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-再选择ok就i可以了，之后，会加载比较久，因为第一次拉取jar包比较耗时，慢慢等待就是了，如果出错，还是那句话：`中间可能会出错，十有八九是网络问题，建议挂vpn，或者多试几次`
-加载成功后的样子：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019062823055280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
-4. 新建自己的module，建议新建gradle项目，过程如下。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230616126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230622487.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230629917.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230638584.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230646199.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-到这里module就新建完成了。
-5. 添加依赖
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190628230708806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTc4MTMw,size_16,color_FFFFFF,t_70)
-
+3. 新建自己的module，建议新建gradle项目。
+4. 再新建的项目中添加依赖`compile(project(":spring-context"))`
 6. 测试
 编写Main程序，如下：
 ```java
