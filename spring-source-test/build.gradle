@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.0.15.BUILD-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    compile(project(":spring-beans"))
+//    compile(project(":spring-core"))
+    compile(project(":spring-context"))
+//    compile(project(":spring-expression"))
+}
