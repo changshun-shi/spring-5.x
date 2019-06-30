@@ -554,6 +554,8 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 				// Invoke factory processors registered as beans in the context.
 				// 实例化并调用所有注册的beanFactory后置处理器，这里做的事情依次如下：
+				// 1、初始化config中配置的bean
+				// @todo 不知道实现原理
 				// @todo 这里不太懂实现这些方法的作用是什么，先mark，以后再看
 				// 1、这一步执行实现了对应的Aware接口的Bean的set方法。例如（按照实现的先后顺序进行执行）：
 				//		BeanNameAware的setBeanName(String name)获取BeanName
@@ -740,7 +742,9 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 	/**
 	 * Instantiate and invoke all registered BeanFactoryPostProcessor beans,
+	 * 初始化所有注册BeanFactoryPostProcessor接口的bean
 	 * respecting explicit order if given.
+	 * 如果bean有序就按顺序加载bean @todo 不知道啥意思
 	 * <p>Must be called before singleton instantiation.
 	 */
 	protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {

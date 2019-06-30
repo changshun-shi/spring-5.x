@@ -78,7 +78,7 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 
 	/**
 	 * 初始化各种数据加载器等
-	 * 1、自身的reader，scanner
+	 * 1、自身的reader（后面读取bean），scanner
 	 * 2、父类（{@link GenericApplicationContext}）的beanFactory
 	 * 3、父类的父类({@link org.springframework.context.support.AbstractApplicationContext})的resourcePatternResolver
 	 * 4、父类的父类的父类({@link org.springframework.core.io.DefaultResourceLoader})的classLoader
