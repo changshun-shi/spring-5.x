@@ -10,15 +10,10 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 
 //@Configuration
-public class Config implements BeanFactoryPostProcessor {
+public class Config {
 	@Bean("person")
 	public Person person() {
 		return new Person("Hello", 1948);
-	}
-
-	@Override
-	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-		System.out.println("===================Config 的 BeanFactoryPostProcessor==================");
 	}
 }
 
