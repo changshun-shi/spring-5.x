@@ -557,7 +557,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 				// Invoke factory processors registered as beans in the context.
 				// 实例化并调用所有注册的beanFactory后置处理器，这里做的事情依次如下：
-				// 1、初始化config中配置的bean
+				// 1、扫描
 				// @todo 不知道实现原理
 				// @todo 这里不太懂实现这些方法的作用是什么，先mark，以后再看
 				// 1、这一步执行实现了对应的Aware接口的Bean的set方法。例如（按照实现的先后顺序进行执行）：
@@ -590,6 +590,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				registerListeners();
 
 				// Instantiate all remaining (non-lazy-init) singletons.
+				// 这一步是正式的Bean初始化过程
 				finishBeanFactoryInitialization(beanFactory);
 
 				// Last step: publish corresponding event.
